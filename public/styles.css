@@ -1,0 +1,231 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+.container, .containerEditTask {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.toolsBar {
+  grid-column: 1 / -1;
+}
+
+.taskList {
+  grid-column: 2 / 4;
+  padding: 0!important;
+}
+
+.filterToolBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+}
+
+.filterToolBar > div:first-child {
+  width: 150px;
+}
+
+.addBar {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.categories {
+  display: inline-block;
+  width: 100%;
+}
+.category, .titleCategoryInModal {
+  border: 1px solid rgb(117, 117, 117);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(117, 117, 117);
+  height: 43px;
+  line-height: 43px;
+  overflow: hidden;
+  justify-content: space-between;
+  margin-bottom: -1px;
+  border-radius: 3px;
+}
+.category span {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.category span:first-child {
+  margin-left: 5px;
+}
+.category span:last-child {
+  margin-right: 6px;
+}
+.category i {
+  margin: 0px 1px;
+  transition: 0.2s linear;
+}
+.category i:hover {
+  opacity: 0.6;
+}
+.titleCategory {
+  margin: 0 7px;
+}
+.category.active {
+  color: rgb(0, 188, 212);
+  border: none;
+  border: 1px solid rgb(0, 188, 212);
+}
+
+.taskEditModalContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.54);
+}
+
+.containerEditTask {
+  grid-template-rows: repeat(10, 50px) auto;
+  height: 73vh;
+}
+.listCategoriesInModal {
+  grid-column: 1 / 2;
+  grid-row: 1 / -1;
+}
+.buttonsInTaskModal {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+  justify-self: right;
+}
+.inputInTaskModal {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+.checkboxInTaskModal {
+  grid-column: 2 / 4;
+  grid-row: 4;
+}
+.textareaInTaskModal {
+  grid-column: 2 / -1;
+  grid-row: 5 / -1;
+  height: 100%;
+  font-family: initial;
+  font-size: 18px;
+  overflow: hidden;
+  resize: none;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  outline: none;
+  border-radius: 2px;
+  padding: 8px;
+}
+.textareaInTaskModal::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+.textareaInTaskModal:focus {
+  border: 1px solid rgb(0, 188, 212);
+
+}
+.outsideEditTask {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.54);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+.outsideEditTask h3 {
+  margin: 0px;
+  padding: 24px 24px 20px;
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 400;
+}
+.nestedCategory {
+  margin-left: 30px;
+}
+i {
+  transition: 0.2s linear;
+}
+i.active {
+  transform: rotateZ(180deg)
+}
+.task {
+  border: 1px solid rgb(117, 117, 117);
+  width: 79%;
+  margin-bottom: -1px;
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+/* .task:after {
+  position: absolute;
+  transition: .5s;
+  content: '';
+  width: 0;
+  bottom: -1px;
+  height: 3px;
+  background: rgb(0, 188, 212);
+  right: 0;
+  left: auto;
+}
+.task:hover:after {
+  width: 100%;
+  left: 0;
+} */
+
+.task i {
+  color: rgb(117, 117, 117);
+  transition: 0.2s linear;
+}
+.task i:hover {
+  opacity: 0.6;
+}
+.titleCategoryInModal {
+  padding-left: 12px;
+}
+.titleCategoryInModal i {
+  margin-right: 9px;
+  cursor: pointer;
+  transition: 0.2s linear;
+}
+.titleCategoryInModal i:hover {
+  opacity: 0.6;
+}
+.titleCategoryInModal i:active {
+  color: aqua;
+}
+.notActiveTasks {
+  display: flex;
+  justify-content: center;
+  color: rgba(0,0,0,0.3);
+}
+.taskRoute {
+  grid-column: 2 / 4;
+}
+.undoBtn {
+  display: flex;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+.undoBtn i {
+  color: rgb(255, 255, 255)
+}
+.iconsToMoveTask {
+  line-height: 100%;
+  white-space: nowrap;
+}
+.titleCategoruInModal {
+  overflow: hidden;
+  white-space: nowrap;
+}
